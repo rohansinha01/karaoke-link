@@ -16,4 +16,4 @@ const songs = [
     }
 ]
 
-module.exports = songs
+module.exports = Song

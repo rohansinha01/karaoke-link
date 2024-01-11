@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head.ejs") %>
+<body>
+    <%- include("../partials/header.ejs") %>
+    <h1>Show Page</h1>
+    <article>
+        <h2>
+            <%= song.songTitle %> - <%= song.artist %>
+        </h2>
+        <h3>
+            <%= song.sangBefore ? "Sang" : "Haven't Sang" %>
+        </h3>
+    </article>
+</body>
+</html>

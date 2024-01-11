@@ -81,6 +81,18 @@ app.get("/songs/seed", async (req, res) => {
     }
 })
 
+// Show Page
+app.get("/songs/:id", async (req,res) => {
+    try {
+      const id = req.params.id
+      const song = await Song.findById(id)  
+      res.render("songs/show.ejs", {song})
+    } catch (error) {
+        console.log(error.message)
+        res.send("There was an error, read logs for error details")
+    }
+})
+
 // turn on the server (the listener)
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)
