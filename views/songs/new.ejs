@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+  <body>
+    <%- include("../partials/header.ejs") %>
+
+    <main>
+      <div>
+        <form action="/songs" method="post">
+          <div>
+            <h1>Add a new song to your list</h1>
+            <label
+              >Name:<input 
+              type="text" 
+              name="songTitle" 
+              placeholder="name of song"
+            /></label>
+            <label
+              >Artist:<input
+                type="text"
+                name="artist"
+                placeholder="name of artist"
+            /></label>
+            <label
+              >Sang Before:<input 
+              type="checkbox" 
+              name="sangBefore"
+            /></label>
+          </div>
+          <button>Add Song to List</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

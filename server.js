@@ -21,7 +21,7 @@ const {Schema, model} = mongoose
 const songSchema = new Schema({
     songTitle: String,
     artist: String,
-    sang: Boolean
+    sangBefore: Boolean
 })
 
 const Song = model("Song", songSchema)
@@ -51,6 +51,23 @@ try {
 
 })
 
+// New
+app.get("/songs/new", (req,res) => {
+    res.render("songs/new.ejs")
+})
+
+// Create
+app.post("/songs", async (req, res) => {
+    try {
+        req.body.sangBefore = req.body.sangBefore === "on" ? true : false;
+        await Song.create(req.body)
+        res.redirect("/songs")
+    } catch (error) {
+    console.log(error.message)
+    res.send("There was an error, read logs for error details")
+    }
+})
+
 // Seed
 app.get("/songs/seed", async (req, res) => {
     try {
@@ -70,7 +87,7 @@ app.get("/songs/seed", async (req, res) => {
                 artist: 'Journey',
                 sangBefore: false
             }
-        ]
+        ];
     await Song.deleteMany({})
 
     const songs = await Song.create(startSongs)
