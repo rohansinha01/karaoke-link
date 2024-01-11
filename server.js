@@ -39,6 +39,18 @@ app.get("/", (req, res) => {
     res.send("It's Working")
 })
 
+// Index
+app.get("/songs", async (req, res) => {
+try {
+    const songs = await Song.find({})
+    res.render("./songs/index.ejs", {songs})
+} catch (error) {
+    console.log(error.message)
+    res.send("There was an error, read logs for error details")
+}
+
+})
+
 // Seed
 app.get("/songs/seed", async (req, res) => {
     try {
