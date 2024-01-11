@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+  <body>
+    <%- include("../partials/header.ejs") %>
+
+    <main>
+      <div>
+        <form action="/songs/<%= song._id %>?_method=PUT" method="post">
+          <div>
+            <h1>Edit <%= song.name %></h1>
+            <label
+              >Name:<input 
+              type="text" 
+              name="songTitle" 
+              placeholder="name of song"
+              value="<%= song.songTitle %>"
+            /></label>
+            <label
+              >Artist:<input
+                type="text"
+                name="artist"
+                placeholder="name of artist"
+                value="<%= song.artist %>"
+            /></label>
+            <label
+              >Sang Before:<input 
+              type="checkbox" 
+              name="sangBefore"
+              <%= song.sangBefore ? "checked" : "" %>
+            /></label>
+          </div>
+          <button>Update</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

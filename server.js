@@ -31,41 +31,12 @@ const app = express()
 
 // Middle Ware
 app.use(morgan('dev'))
-app.use(methodOverride("-method"))
+app.use(methodOverride("_method"))
 app.use(express.urlencoded({extended: true}))
 app.use(express.static("public"))
 // routes
 app.get("/", (req, res) => {
     res.send("It's Working")
-})
-
-// Index
-app.get("/songs", async (req, res) => {
-try {
-    const songs = await Song.find({})
-    res.render("./songs/index.ejs", {songs})
-} catch (error) {
-    console.log(error.message)
-    res.send("There was an error, read logs for error details")
-}
-
-})
-
-// New
-app.get("/songs/new", (req,res) => {
-    res.render("songs/new.ejs")
-})
-
-// Create
-app.post("/songs", async (req, res) => {
-    try {
-        req.body.sangBefore = req.body.sangBefore === "on" ? true : false;
-        await Song.create(req.body)
-        res.redirect("/songs")
-    } catch (error) {
-    console.log(error.message)
-    res.send("There was an error, read logs for error details")
-    }
 })
 
 // Seed
@@ -97,6 +68,62 @@ app.get("/songs/seed", async (req, res) => {
         res.send("There was an error, read logs for error details")
     }
 })
+
+// Index
+app.get("/songs", async (req, res) => {
+try {
+    const songs = await Song.find({})
+    res.render("./songs/index.ejs", {songs})
+} catch (error) {
+    console.log(error.message)
+    res.send("There was an error, read logs for error details")
+}
+
+})
+
+// New
+app.get("/songs/new", (req,res) => {
+    res.render("songs/new.ejs")
+})
+
+// Create
+app.post("/songs", async (req, res) => {
+    try {
+        req.body.sangBefore = req.body.sangBefore === "on" ? true : false;
+        await Song.create(req.body)
+        res.redirect("/songs")
+    } catch (error) {
+    console.log(error.message)
+    res.send("There was an error, read logs for error details")
+    }
+})
+
+// Edit
+app.get("/songs/:id/edit", async (req, res) => {
+    try {
+        const id = req.params.id
+        const song = await Song.findById(id)
+        res.render("songs/edit.ejs", { song })
+    } catch (error) {
+    console.log(error.message)
+    res.send("There was an error, read logs for error details")
+    }
+})
+
+// Update
+app.put("/songs/:id", async (req, res) => {
+    try {
+        const id = req.params.id
+        req.body.sangBefore = req.body.sangBefore === "on" ? true : false
+        await Song.findByIdAndUpdate(id, req.body)
+        res.redirect(`/songs/${id}`)
+    } catch (error) {
+    console.log(error.message)
+    res.send("There was an error, read logs for error details")
+    }
+})
+
+
 
 // Show Page
 app.get("/songs/:id", async (req,res) => {
