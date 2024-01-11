@@ -123,6 +123,19 @@ app.put("/songs/:id", async (req, res) => {
     }
 })
 
+// Delete
+app.delete("/songs/:id", async (req, res) => {
+    try {
+    const id = req.params.id
+    await Song.findByIdAndDelete(id)
+    res.redirect("/songs")
+        
+    } catch (error) {
+        console.log(error.message)
+        res.send("There was an error, read logs for error details")   
+    }
+    
+})
 
 
 // Show Page
