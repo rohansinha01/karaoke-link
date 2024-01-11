@@ -19,7 +19,7 @@ mongoose.connection
 // Create Songs Model
 const {Schema, model} = mongoose
 const songSchema = new Schema({
-    song: String,
+    songTitle: String,
     artist: String,
     sang: Boolean
 })
@@ -30,14 +30,44 @@ const Song = model("Song", songSchema)
 const app = express()
 
 // Middle Ware
-
+app.use(morgan('dev'))
+app.use(methodOverride("-method"))
+app.use(express.urlencoded({extended: true}))
+app.use(express.static("public"))
 // routes
 app.get("/", (req, res) => {
     res.send("It's Working")
 })
 
-// Index
+// Seed
+app.get("/songs/seed", async (req, res) => {
+    try {
+        const startSongs = [
+            {
+                songTitle: 'Mr. Brightside',
+                artist: 'The Killers',
+                sangBefore: true
+            },
+            {
+                songTitle: '1000 Miles',
+                artist: 'Vanessa Carlton',
+                sangBefore: true
+            },
+            {
+                songTitle: 'Dont Stop Believin',
+                artist: 'Journey',
+                sangBefore: false
+            }
+        ]
+    await Song.deleteMany({})
 
+    const songs = await Song.create(startSongs)
+    res.json(songs)
+    } catch (error) {
+        console.log(error.message)
+        res.send("There was an error, read logs for error details")
+    }
+})
 
 // turn on the server (the listener)
 app.listen(PORT, () => {
