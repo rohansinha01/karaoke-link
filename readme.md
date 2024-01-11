@@ -1,8 +1,8 @@
 # Project 2
 
 - **Rohan Sinha**
-- **Karaoke List**
-- **Website to track what karaoke songs you are singing or want to sing in the future.**
+- **Website Name: Karaoke List**
+- **Description: Website to track what karaoke songs you are singing or want to sing in the future.**
 - **https://github.com/rohansinha01/karaoke-link**
 - **https://karaoke-list.onrender.com/**
 - **https://trello.com/b/z6uODCn8/karaoke**
@@ -57,4 +57,16 @@ Below should be a table listing the different routes in your app and their purpo
 This should be a diagram showing your models and any relationships between them.
 
 ![Entity Relationship Diagram](./public/images/erd.png)
+
+## Potential Updates
+
+## Authentification Pages
+
+![New User](./public/images/sign-up.png)
+![Sign In](./public/images/log-in.png)
+
+## ERD with Authentification Pages
+
+![ERD](./public/images/auth-erd.png)
+
 
