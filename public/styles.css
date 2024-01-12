@@ -3,12 +3,50 @@ body {
     background-repeat: no-repeat;
     background-size: cover
 }
+a {
+    color: pink
+}
+form {
+    display: flex;
+    flex-direction: column;
+    color: lightpink;
+   
+}
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.song {
+    border: 1px solid gold;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    max-width: 200px;
+}
+
+.not-link {
+    color: rgb(229, 150, 229)
+}
 
 @media screen {
     body {
         color: white;
         background-image: url("./images/mobile-background.jpeg");
-        background-size: cover;
         background-repeat: repeat-y;
+       
     }
+
+    #login-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items:end ;
+    }
+
+    #signup-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items:end ;
+    }
+
 }
