@@ -4,7 +4,7 @@
 - **Website Name: Karaoke List**
 - **Description: Website to track what karaoke songs you are singing or want to sing in the future.**
 - **https://github.com/rohansinha01/karaoke-link**
-- **https://karaoke-list.onrender.com/**
+- **https://karaoke-list.onrender.com/songs**
 - **https://trello.com/b/z6uODCn8/karaoke**
 
 ## List of Dependencies
