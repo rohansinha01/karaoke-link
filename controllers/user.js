@@ -29,17 +29,36 @@ router.post("/signup", async (req, res) => {
 })
 // Login page Route
 router.get("/login", (req,res) => {
-    res.send("login")
+    res.render("user/login.ejs")
 })
 
 // Login Submit Route
 router.post("/login", async (req, res) => {
-    res.send("login")
+    try {
+        const { username, password } = req.body
+
+        const user = await User.findOne({ username })
+        if (!user) {
+            throw new Error("User Error: User Doesn't Exist")
+        }
+        const result = await bcrypt.compare(password, user.password)
+        if(!result){
+            throw new Error("User Error: Password Doesn't Match")
+        }
+        req.session.username = username
+        req.session.loggedIn = true
+        res.redirect("/songs")
+    } catch (error) {
+        console.log(error.message)
+        res.send("There was an error, read logs for error details")
+    }
 })
 
 // Logout Route
 router.get("/logout", async (req, res) => {
-    res.send("logout")
+    req.session.destroy((err) => {
+        res.redirect("/user/login")
+    })
 })
 
 module.exports = router

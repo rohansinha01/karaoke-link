@@ -4,11 +4,25 @@
 const express = require("express")
 const Song = require("../models/songs")
 
+
+
 //////////////////////////////////////
 // Create the Router
 ///////////////////////////////////////
 const router = express.Router()
 
+//Middleware
+
+router.use((req, res, next) => {
+    console.table(req.session)
+
+    if (req.session.loggedIn) {
+        next()
+    } else {
+
+    res.redirect("/user/login")
+    }
+})
 
 
 // Routes
