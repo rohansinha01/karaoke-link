@@ -7,6 +7,7 @@ const songSchema = new Schema({
   songTitle: String,
   artist: String,
   sangBefore: Boolean,
+  username: String
 });
 
 

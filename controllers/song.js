@@ -50,7 +50,7 @@ router.get("/seed", async (req, res) => {
     await Song.deleteMany({})
 
     const songs = await Song.create(startSongs)
-    res.json(songs)
+    res.redirect("/songs")
     } catch (error) {
         console.log(error.message)
         res.send("There was an error, read logs for error details")
@@ -60,7 +60,8 @@ router.get("/seed", async (req, res) => {
 // Index
 router.get("/", async (req, res) => {
 try {
-    const songs = await Song.find({})
+    const username = req.session.username
+    const songs = await Song.find({username})
     res.render("./songs/index.ejs", {songs})
 } catch (error) {
     console.log(error.message)
@@ -78,6 +79,7 @@ router.get("/new", (req,res) => {
 router.post("/", async (req, res) => {
     try {
         req.body.sangBefore = req.body.sangBefore === "on" ? true : false;
+        req.body.username = req.session.username
         await Song.create(req.body)
         res.redirect("/songs")
     } catch (error) {
