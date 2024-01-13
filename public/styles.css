@@ -29,6 +29,10 @@ article {
     color: rgb(229, 150, 229)
 }
 
+.add-song {
+    color: rgb(229, 150, 229)
+}
+
 @media screen {
     body {
         color: white;
