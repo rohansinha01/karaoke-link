@@ -2,14 +2,16 @@
 <html lang="en">
   <%- include("../partials/head.ejs") %>
   <a href="/songs"><button>Back to Your List</button></a>
+  <%- include("../partials/header.ejs") %>
+  
   <body>
-    <%- include("../partials/header.ejs") %>
-
-    <main>
-      <div>
+    
+   
+    <main><h1 class="add-song">Add a new song to your list</h1>
+      <div class="new">
+        
         <form action="/songs" method="post">
           <div>
-            <h1 class="add-song">Add a new song to your list</h1>
             <label
               >Name:<input 
               type="text" 

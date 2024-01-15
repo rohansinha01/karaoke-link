@@ -5,7 +5,7 @@
 <body>
     <%- include("../partials/header.ejs") %>
     <h1>Show Page</h1>
-    <article>
+    <article><div class="show">
         <h2>
             <%= song.songTitle %> - <%= song.artist %>
         </h2>
@@ -15,7 +15,7 @@
         <a href="/songs/<%= song._id %>/edit"><button>Update</button></a>
         <form action="/songs/<%= song._id %>?_method=DELETE" method="POST">
         <button>Delete</button>
-        </form>
+        </form></div>
     </article>
 </body>
 </html>

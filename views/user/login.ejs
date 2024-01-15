@@ -4,16 +4,16 @@
 <body>
     <%- include("../partials/header.ejs") %>
     <main>
-        <div>
+        <div><h1 id="login">Login</h1>
             <form action= "/user/login" method="post" id="login-buttons">
-                <h1>Login</h1>
+                
                 <label>
                     Username: <input type="text" name="username"  required />
                 </label>
                 <label>
                     Password: <input type="password" name="password"  required />
                 </label>
-                <input type="submit" value="Login" />
+                <input class= "login" type="submit" value="Login" />
             </form>
         </div>
     </main>

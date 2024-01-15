@@ -50,7 +50,7 @@ router.post("/login", async (req, res) => {
         res.redirect("/songs")
     } catch (error) {
         console.log(error.message)
-        res.send("There was an error, read logs for error details")
+        res.send("Username and Password do not match")
     }
 })
 

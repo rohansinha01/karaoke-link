@@ -3,24 +3,22 @@
 <%- include("../partials/head.ejs") %>
 <body>
     <%- include("../partials/header.ejs") %>
-    <div>
+    <div class="all-songs">
         <% for(let song of songs){ %>
     <article>
         <a href="/songs/<%= song._id %>">
             <div class="song">
             <h2>
                 <%= song.songTitle %></a> by  <%= song.artist %> 
-                
-            </h2>
-            <h2 class="not-link">
-                <%= song.sangBefore ? "Sang" : "Have Not Sung"%>
-            </h2>
+ </h2>
+            <h2> <%= song.sangBefore ? "Sang" : "Have Not Sung"%> </h2>  
+           
         </div>
         
         
     </article>
   <%  } %>
-  <a href="/songs/new"><button>Add a Song</button></a>
-</div>
+  
+</div><a href="/songs/new"><button>Add a Song</button></a>
 </body>
 </html>

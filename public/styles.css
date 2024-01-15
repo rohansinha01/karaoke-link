@@ -1,10 +1,14 @@
 body {
-    background-image: url("./images/background.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover
+    background-image: url("./images/karaoke.jpeg");
+    background-repeat: repeat;
+    image-rendering: crisp-edges;
+    background-size: 160vh;
+    color: white
+    
+   
 }
 a {
-    color: pink
+    color: whitesmoke
 }
 form {
     display: flex;
@@ -18,39 +22,59 @@ article {
     justify-content: space-between;
 }
 .song {
-    border: 1px solid gold;
+    border: 5px ridge whitesmoke;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    max-width: 200px;
+    
+    align-content: center;
+    width: 200px;
+    height: 200px;
 }
 
 .not-link {
-    color: rgb(229, 150, 229)
+    color: white
 }
 
 .add-song {
-    color: rgb(229, 150, 229)
+    display: flex;
+    
 }
 
-@media screen {
+.new {
+    display: flex;
+    justify-content: end;
+    align-content: end;
+    max-width: 200px;
+}
+
+#login-buttons {
+    
+    max-width: 200px;
+}
+
+.signup {
+    max-width: 200px;
+}
+
+.show {
+    max-width: 200px;
+}
+
+.all-songs {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+
+@media only screen and (max-width: 768px) {
     body {
-        color: white;
         background-image: url("./images/mobile-background.jpeg");
-        background-repeat: repeat-y;
+        background-repeat: repeat;
+        background-size: 78vh;
+        
+
        
-    }
-
-    #login-buttons {
-        display: flex;
-        flex-direction: column;
-        align-items:end ;
-    }
-
-    #signup-buttons {
-        display: flex;
-        flex-direction: column;
-        align-items:end ;
     }
 
 }
