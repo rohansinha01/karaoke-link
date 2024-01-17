@@ -63,7 +63,7 @@ article {
 .all-songs {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    align-items: start;
 }
 
 
@@ -75,6 +75,11 @@ article {
         
 
        
+    }
+
+    .all-songs {
+        display: flex;
+        flex-direction: column;
     }
 
 }
