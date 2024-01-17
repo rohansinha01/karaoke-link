@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head.ejs") %>
+<body>
+    <%- include("../partials/header.ejs") %>
+    <main>
+        <div class="signup">
+            <form action="/user/signup" method="post" id="signup-buttons">
+                <h1>New User</h1>
+                <label>
+                    Username: <input type="text" name="username" required />
+                </label>
+                <label>
+                    Password: <input type="password" name="password" required />
+                </label>
+                <input type="submit" value="Create Account" />
+            </form>
+            Username already exists. Please try a different username.
+        </div>
+    </main>
+</body>
+</html>

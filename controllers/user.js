@@ -24,7 +24,7 @@ router.post("/signup", async (req, res) => {
         res.redirect("/user/login")
     } catch (error) {
         console.log(error.message)
-        res.send("There was an error, read logs for error details")
+        res.render("user/signup-error.ejs")
     }
 })
 // Login page Route
@@ -50,7 +50,7 @@ router.post("/login", async (req, res) => {
         res.redirect("/songs")
     } catch (error) {
         console.log(error.message)
-        res.send("Username and Password do not match")
+        res.render("user/login-error.ejs")
     }
 })
 
