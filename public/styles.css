@@ -8,6 +8,14 @@ body {
    
 }
 
+.update {
+    width: 80px
+}
+
+a:hover {
+    color: lightblue
+}
+
 button:hover {
     background-color: lightblue;
     color: blue

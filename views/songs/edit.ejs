@@ -9,7 +9,7 @@
       <div>
         <form action="/songs/<%= song._id %>?_method=PUT" method="post">
           <div>
-            <h1>Edit <%= song.name %></h1>
+            <h1>Edit <%= song.songTitle %></h1>
             <label
               >Name:<input 
               type="text" 
@@ -31,7 +31,7 @@
               <%= song.sangBefore ? "checked" : "" %>
             /></label>
           </div>
-          <button>Update</button>
+          <button class="update">Update</button>
         </form>
       </div>
     </main>
