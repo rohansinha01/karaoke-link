@@ -13,11 +13,11 @@ body {
 }
 
 a:hover {
-    color: lightblue
+    color: goldenrod
 }
 
 button:hover {
-    background-color: lightblue;
+    background-color: goldenrod;
     color: blue
 }
 a {
@@ -69,6 +69,13 @@ article {
     max-width: 200px;
 }
 
+.delete {
+    width: 59px
+}
+
+.update-delete {
+    display: flex;
+}
 .show {
     max-width: 200px;
 }
@@ -78,6 +85,13 @@ article {
     flex-flow: row wrap;
     align-items: start;
 }
+
+* {
+    font-family: "Salsa", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 
 
 @media only screen and (max-width: 768px) {
