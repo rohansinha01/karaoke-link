@@ -54,7 +54,6 @@ Below should be a table listing the different routes in your app and their purpo
 
 ## ERD (Entity Relationship Diagram)
 
-This should be a diagram showing your models and any relationships between them.
 
 ![Entity Relationship Diagram](./public/images/erd.png)
 
