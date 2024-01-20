@@ -61,7 +61,7 @@ Below should be a table listing the different routes in your app and their purpo
 
 ![Entity Relationship Diagram](./public/images/erd.png)
 
-## Potential Updates
+## Updates
 
 ## Authentification Pages
 
