@@ -45,6 +45,7 @@ Below should be a table listing the different routes in your app and their purpo
 | Karoke Seed Route | /songs/seed | GET | Route to get dummy data onto the page |
 | Log In Page | /user/login | GET | Route to log into account |
 | Sign Up Page | /user/signup | GET | Route to sign up a new account |
+| Logout | /logout | GET | Route to logout of account |
 
 
 ## Design Mockups (Desktop + Mobile)
