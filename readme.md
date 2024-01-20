@@ -24,12 +24,10 @@
 
 ##### Frontend (if used, ex. jquery, alpine, bootstrap, htmx, etc.)
 
-- alpine
-
-## Technologies Used: 
 - Javascript
 - HTML
 - CSS
+- Typescript
 
 ## Route Map
 
