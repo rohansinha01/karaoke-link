@@ -7,6 +7,7 @@
 - **https://karaoke-list.onrender.com/songs**
 - **https://trello.com/b/z6uODCn8/karaoke**
 
+
 ## List of Dependencies
 
 ##### Node Dependencies (package.json)
@@ -24,6 +25,11 @@
 ##### Frontend (if used, ex. jquery, alpine, bootstrap, htmx, etc.)
 
 - alpine
+
+## Technologies Used: 
+- Javascript
+- HTML
+- CSS
 
 ## Route Map
 
